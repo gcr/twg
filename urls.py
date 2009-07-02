@@ -6,7 +6,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
     # Example:
-    # (r'^tryptich/', include('tryptich.foo.urls')),
+    # (r'^twg/', include('twg.foo.urls')),
 
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:

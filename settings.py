@@ -1,4 +1,4 @@
-# Django settings for tryptich project.
+# Django settings for three word game.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -74,7 +74,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'tryptich.urls'
+ROOT_URLCONF = 'twg.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -87,5 +87,6 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'twg.stories',
     'django.contrib.admindocs',
 )
