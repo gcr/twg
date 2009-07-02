@@ -5,8 +5,7 @@
         Story list:
         <ol>
             {% for story in story_list %}
-                {# TODO: Re-use the story detail code instead of hardcoding
-                    the URL. #}
+                {# TODO: Re-use the story detail code instead of hardcoding the URL. #}
                 <li><a href="{{url}}{{story.id}}/">{{story.name}}</a></li>
             {% endfor %}
         </ol>
