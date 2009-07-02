@@ -1,12 +1,14 @@
 from django.conf.urls.defaults import *
+from models import Story
 import settings
 
 # Generic views ---------------
 urlpatterns = patterns('django.views.generic',
-    (r'^/?$', 'simple.direct_to_template',
+    (r'^/?$', 'list_detail.object_list',
         {
-            'template': 'index.html',
-#            'extra_context': {"title": "Welcome!"},
+            'queryset': Story.objects.all(),
+            'template_object_name': 'story',
+            'extra_context': {"title": "Story List"},
         }
     ),
     

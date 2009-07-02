@@ -8,7 +8,7 @@ class Story(models.Model):
     
     
     def __unicode__(self):
-        return self.fulltext
+        return self.name
         
         
     @property
@@ -18,7 +18,16 @@ class Story(models.Model):
             return " ".join([fragment.text for fragment in frag_list])
         else:
             return ""
-        
+    
+    @property
+    def brieftext(self):
+        frag_list = self.fragment_set.all()
+        if len(frag_list) > 5:
+            return "%s..." % " ".join([fragment.text for fragment in frag_list])
+        elif frag_list:
+            return " ".join([fragment.text for fragment in frag_list[:4]])
+        else:
+            return ""
         
     def add_fragment(self, new_text, new_author, date=None):
         if not date:
@@ -55,3 +64,5 @@ class Fragment(models.Model):
     date = models.DateTimeField()
     author = models.ForeignKey(User)
     story = models.ForeignKey(Story)
+    class Meta:
+        ordering = ("date",)

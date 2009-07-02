@@ -1,0 +1,14 @@
+{% extends "base_stories.html" %}
+
+{%block stories_content %}
+    {% if story_list %}
+        Story list:
+        <ol>
+            {% for story in story_list %}
+                {# TODO: Re-use the story detail code instead of hardcoding
+                    the URL. #}
+                <li><a href="{{url}}{{story.id}}/">{{story.name}}</a></li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+{% endblock %}
