@@ -5,6 +5,7 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
+    ('Michael Wilber', 'wilmic1102@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -86,4 +87,5 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.admindocs',
 )
