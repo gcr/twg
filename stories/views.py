@@ -1,5 +1,6 @@
 # Create your views here.
 from django.http import HttpResponseRedirect
+from django.template import RequestContext
 from django.shortcuts import render_to_response
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
@@ -19,9 +20,9 @@ def add_fragment(request, story_id):
         frag_form = AddFragmentForm()
         
     return render_to_response("stories/add_story.html",
-        {
+        RequestContext(request, {
             'form':frag_form,
-            'user':request.user,
+#            'user':request.user,
             'story':Story.objects.get(pk=story_id),
-        }
+        })
     )

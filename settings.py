@@ -10,9 +10,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-TALLYHO = False
 
-if TALLYHO:
+if not DEBUG:
     DATABASE_ENGINE = 'mysql'      # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
     DATABASE_NAME = 'threewordgame'# Or path to database file if using sqlite3.
     DATABASE_USER = 'threewordgame'# Not used with sqlite3.

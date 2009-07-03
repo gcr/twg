@@ -32,8 +32,3 @@ urlpatterns += patterns('',
     url(r'^(?P<story_id>\d+)/add/?$', views.add_fragment, name='story_add_fragment')
 )
 
-if settings.DEBUG:
-    # Add some debug templates and static files.
-    urlpatterns += patterns('',
-        #(r'^delay_test/', stories.views.delay_test),
-    )
