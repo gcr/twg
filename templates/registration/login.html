@@ -17,7 +17,7 @@
             <p class="error">Sorry, that's not a valid username or password</p>
         {% endif %}
 
-        <form action="" method="post">
+        <form action="{% url account_login %}" method="post">
           <label for="username">User name:</label>
           <input type="text" name="username" value="" id="username">
           <label for="password">Password:</label>
