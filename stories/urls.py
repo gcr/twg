@@ -14,11 +14,12 @@ urlpatterns = patterns('django.views.generic',
     ),
     
     # Individual story
-    (r'^(?P<object_id>\d+)/$', 'list_detail.object_detail',
+    url(r'^(?P<object_id>\d+)/$', 'list_detail.object_detail',
         {
             'queryset': Story.objects.all(),
             'template_object_name': 'story',
-        }
+        },
+        'story_detail' # URL name
     ),
     
 )
