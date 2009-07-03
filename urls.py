@@ -17,10 +17,10 @@ urlpatterns += patterns('',
     # (r'^twg/', include('twg.foo.urls')),
     (r'^stories/', include('twg.stories.urls')),
     
-    # Uncomment the next line to enable the admin:
     (r'^admin/(.*)', admin.site.root),
     (r'^registration/', include('twg.registration.urls')),
-    (r'^openid/', include('django_openid_auth.urls')),
+    
+    (r'^openid/', include('django_openid_auth.urls'), {'template_name': 'registration/login.html'}),
 )
 
 # User account management ---------------
