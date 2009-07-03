@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 import settings
 import stories
+import django_openid_auth.forms
 
 from django.contrib import admin
 admin.autodiscover()
@@ -19,6 +20,7 @@ urlpatterns += patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/(.*)', admin.site.root),
     (r'^registration/', include('twg.registration.urls')),
+    (r'^openid/', include('django_openid_auth.urls')),
 )
 
 # User account management ---------------
