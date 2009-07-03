@@ -94,5 +94,5 @@ INSTALLED_APPS = (
     #'django.contrib.sites',
     'django.contrib.admin',
     'twg.stories',
-    'twg.accounts',
+    'twg.registration',
 )

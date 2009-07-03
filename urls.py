@@ -18,9 +18,10 @@ urlpatterns += patterns('',
     
     # Uncomment the next line to enable the admin:
     (r'^admin/(.*)', admin.site.root),
+    (r'^registration/', include('twg.registration.urls')),
 )
 
-# User registration ---------------
+# User account management ---------------
 urlpatterns += patterns('django.contrib.auth',
     url(r'^accounts/login/?', 'views.login', name='account_login'),
     #url(r'^logout/', views.logout, {'next_page': '/'}, 'accounts_logout'),

@@ -9,7 +9,6 @@ urlpatterns = patterns('django.views.generic',
         {
             'queryset': Story.objects.all(),
             'template_object_name': 'story',
-            'extra_context': {"title": "Story List"},
         }
     ),
     

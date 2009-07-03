@@ -1,0 +1,33 @@
+{# Login info for sidebar #}
+{% if user.is_authenticated %}
+    Hello, {{ user.username}}!
+    <a href="{% url account_logout %}">Logout</a>
+{% else %}
+    Log in
+    <form action="{% url account_login %}" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="username">User name:</label>
+                </td><td>
+                    <input type="text" name="username" value="" id="username">
+                </td>
+            </tr><tr>
+                <td>
+                    <label for="password">Password:</label>
+                </td><td>
+                    <input type="password" name="password" value="" id="password">
+                </td>
+            </tr><tr>
+                <td colspan=2>
+                    <input type="submit" value="login" />
+<!--                    <input type="hidden" name="next" value="{{ request.path }}" /> -->
+                </td>
+            </tr><tr>
+                <td colspan=2>
+                    Or <a href="{% url register_new_account %}">create a new one...</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+{% endif %}
