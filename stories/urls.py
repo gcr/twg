@@ -1,5 +1,7 @@
 from django.conf.urls.defaults import *
 from models import Story
+import views
+import forms
 import settings
 
 # Generic views ---------------
@@ -17,6 +19,7 @@ urlpatterns = patterns('django.views.generic',
         {
             'queryset': Story.objects.all(),
             'template_object_name': 'story',
+            'extra_context': {'form':forms.AddFragmentForm},
         },
         'story_detail' # URL name
     ),
@@ -25,8 +28,8 @@ urlpatterns = patterns('django.views.generic',
 
 # Custom views ---------------
 urlpatterns += patterns('',
-    # Example:
-    # (r'^twg/', include('twg.foo.urls')),
+    # Add a story
+    url(r'^(?P<story_id>\d+)/add/?$', views.add_fragment, name='story_add_fragment')
 )
 
 if settings.DEBUG:

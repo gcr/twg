@@ -16,5 +16,12 @@
             </li>
         {% endfor %}
     </ol>
+    
+    {% if user.is_authenticated %}
+    <form method="post" action="{% url story_add_fragment story_id=story.id %}">
+        {{ form.as_p }}
+        <input type="submit" value="Add">
+    </form>
+    {% endif %}
 
 {% endblock %}
