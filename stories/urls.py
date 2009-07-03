@@ -4,11 +4,20 @@ import settings
 
 # Generic views ---------------
 urlpatterns = patterns('django.views.generic',
+    # List of stories
     (r'^/?$', 'list_detail.object_list',
         {
             'queryset': Story.objects.all(),
             'template_object_name': 'story',
             'extra_context': {"title": "Story List"},
+        }
+    ),
+    
+    # Individual story
+    (r'^(?P<object_id>\d+)/$', 'list_detail.object_detail',
+        {
+            'queryset': Story.objects.all(),
+            'template_object_name': 'story',
         }
     ),
     

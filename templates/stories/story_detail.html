@@ -1,0 +1,19 @@
+{% extends "base_stories.html" %}
+
+{%block stories_content %}
+
+    Individual story {{ story.name }}
+    <ol>
+        {% for fragment in story.fragment_set.all %}
+            {# TODO: Re-use the story detail code instead of hardcoding the URL. #}
+            <li>
+                <ul>
+                    <li>Text: {{fragment.text}}</li>
+                    <li>Author: {{fragment.author.username}}</li>
+                    <li>Date: {{fragment.date|date:"D d M Y"}}</li>
+                </ul>
+            </li>
+        {% endfor %}
+    </ol>
+
+{% endblock %}
