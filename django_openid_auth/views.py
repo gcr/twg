@@ -194,7 +194,7 @@ def login_complete(request, redirect_field_name=REDIRECT_FIELD_NAME):
             "Unknown OpenID response type: %r" % openid_response.status)
 
 
-def logo(request):
+def logo(request, **kwargs):
     return HttpResponse(
         OPENID_LOGO_BASE_64.decode('base64'), mimetype='image/gif'
     )
