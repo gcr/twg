@@ -28,7 +28,6 @@ urlpatterns = patterns('django.views.generic',
 urlpatterns += patterns('',
     # Example:
     # (r'^twg/', include('twg.foo.urls')),
-    
 )
 
 if settings.DEBUG:

@@ -34,6 +34,10 @@ else:
 # system time zone.
 TIME_ZONE = 'America/Chicago'
 
+# Where do we take people after they finish logging in?
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/'
+
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'en-us'
@@ -90,4 +94,5 @@ INSTALLED_APPS = (
     #'django.contrib.sites',
     'django.contrib.admin',
     'twg.stories',
+    'twg.accounts',
 )
