@@ -3,34 +3,49 @@ html, body {
     padding-top: 0px;
     height: 100%;
 }
-
 body {
     font-family: Arial;
+    background-color: #2e3436
 }
 
 .header {
-    display: block;
     top: 0;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    background: #faa;
+    background: #f57900;
+    padding: 12px;
+}
+.header img {
+    vertical-align: text-bottom;
+}
+.header h1 {
+    display: inline;
+    margin: 0;
+    color: #fff;
+    font-family: helvetica;
+    padding-left: 48px;
+    font-size: 48pt;
 }
 
 .top-bar {
-    background: #afa;
+/*    background: #fcaf3e;*/
+/*    background: #f57900;*/
+    background: #ce5c00;
+    color: #fff;
     display: block;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
     padding: 8px 0 8px 0;
 }
-
+.top-bar a,.top-bar a:visited,.top-bar a:link,.top-bar a:active {
+    color: #fff;
+}
 .top-bar ul {
     margin: 0;
     padding: 0;
 }
-
 .top-bar li {
     display: inline;
     padding-left: 12px;
@@ -42,13 +57,13 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
-    border: solid black 1px;
+    border: solid #888a85 1px;
+    background-color: #eeeeec;
     padding: 0 12px 12px 12px;
 }
-
 .content-frame h1 {
     display: inline-block;
-    border: solid black 1px;
+    border: solid #888a85 1px;
     background-color: #fff;
     margin-top: -0.5em;
     margin-left: 1em;
