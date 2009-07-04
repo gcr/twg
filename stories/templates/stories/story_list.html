@@ -4,19 +4,35 @@
 
 {% block content-title %}Story List{% endblock %}
 {%block stories_content %}
+    <div class="author-list">
+        <h2>Authors</h2>
+        <ul>
+        <li>Bob</li>
+        
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        <li>Bob</li>
+        </ul>
+    </div>
     
-    <div class="story_list">
+    <div class="story-list">
         {% if story_list %}
             {% for story in story_list %}
                 {# TODO: Change this to ui-state-active for new stories #}
                 <h2><a href="{% url story_detail slug=story.slug %}">{{story.name}}</a></h2>
-                    {{ story.brieftext }}
+                <div class="story">{{ story.brieftext }}</div>
             {% endfor %}
         {% else %}
             No stories yet!
         {% endif%}
     </div>
-    <br />
+    
     {% if user.is_authenticated %}
         <div class="ui-widget-content ui-corner-all" style="width:500px;">
             <div class="ui-corner-top ui-widget-header">Create a new story</div>

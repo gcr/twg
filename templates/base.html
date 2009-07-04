@@ -24,11 +24,19 @@
             <img src="{{MEDIA_URL}}twg_logo.png" valign="center";><h1>three-word story</h1>
         </a>
     </div>
-    {% block top-bar %}{% endblock %}
-    <div class="content-frame">
-        <h1>{% block content-title %}Test Title{% endblock %}</h1>
-        {% block content %}{% endblock %}
-    </div>
+    {% block top-bar %}
+        <div class="top-bar">
+            {% include "registration/topbar-login.html" %}
+        </div>
+    {% endblock %}
+        <div class="content-wrapper">
+            {% block content-wrapper %}
+                <div class="content-frame">
+                    <h1>{% block content-title %}Test Title{% endblock %}</h1>
+                    {% block content %}{% endblock %}
+                </div>
+            {% endblock %}
+        </div>
 </body>
 </html>
 
