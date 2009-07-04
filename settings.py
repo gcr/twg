@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     #'django.contrib.sites',
     'django.contrib.admin',
     'django_openid_auth',
+    'django.contrib.humanize',
     'twg.stories',
     'twg.registration',
 )

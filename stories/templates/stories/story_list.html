@@ -1,5 +1,7 @@
 {% extends "base_stories.html" %}
 
+{% load humanize %}
+
 {% block title %}Story list{% endblock %}
 
 {% block content-title %}Story List{% endblock %}
@@ -8,8 +10,14 @@
         {% if story_list %}
             {% for story in story_list %}
                 {# TODO: Change this to ui-state-active for new stories #}
-                <h2><a href="{% url story_detail slug=story.slug %}">{{story.name}}</a></h2>
-                <div class="story">{{ story.brieftext }}</div>
+                <div class="story-header">
+                    <h2><a href="{% url story_detail slug=story.slug %}">{{story.name}}</a></h2>
+                    <strong>Last updated:</strong>
+                    {{ story.last_update_date|naturalday:"M d, Y" }}
+                </div>
+                <div class="story">
+                    {{ story.brieftext }}
+                </div>
             {% endfor %}
         {% else %}
             No stories yet!
