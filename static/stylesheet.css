@@ -3,6 +3,10 @@ body {
     background-color: #F2F5F7;
 }
 
+h1 {
+    margin-top: 0.1em;
+}
+
 input.openid {
     background: url("/openid/logo.gif") no-repeat; 
     background-position: 0 50%;
@@ -47,4 +51,14 @@ div.sidebar-right {
 
 div.ui-widget-header {
     padding: 4px;
+}
+
+.story_list {
+    list-style-position: inside;
+}
+
+.story_list li {
+    padding: 4px;
+    margin: 0.25em;
+    width: 60%;
 }

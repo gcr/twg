@@ -1,16 +1,18 @@
 {% extends "base_stories.html" %}
 
 {% block title %}Story list{% endblock %}
+
 {%block stories_content %}
 
     {% if story_list %}
-        Story list:
-        <ol>
+    
+    <h1>Story list:</h1>
+        <ul class="story_list">
             {% for story in story_list %}
                 {# TODO: Re-use the story detail code instead of hardcoding the URL. #}
-                <li><a href="{% url story_detail object_id=story.id %}">{{story.name}}</a></li>
+                <li class="ui-state-hover ui-corner-all"><a href="{% url story_detail object_id=story.id %}">{{story.name}}</a></li>
             {% endfor %}
-        </ol>
+        </ul>
     {% endif %}
     {% if user.is_authenticated %}
         <div class="ui-widget-content ui-corner-all" style="width:500px;">
