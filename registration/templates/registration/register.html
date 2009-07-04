@@ -2,11 +2,11 @@
 
 {% block title %}Create a new account{% endblock %}
 {% block content %}
-  <h1>Create your account</h1>
-
-  <form action="" method="post">
-      {{ form.as_p }}
-      <input type="submit" value="Create">
-  </form>
+    <h1>Create your account</h1>
+    Would you rather <a href="{% url account_login %}">sign in with OpenID</a> instead?
+    <form action="" method="post">
+        {{ form.as_p }}
+        <input type="submit" value="Create">
+    </form>
 {% endblock %}
 

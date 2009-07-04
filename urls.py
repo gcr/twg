@@ -34,5 +34,5 @@ if settings.DEBUG:
     # Add some debug templates and static files.
     urlpatterns += patterns('',
         (r'^static/(?P<path>.*)', 'django.views.static.serve',
-            {"document_root":settings.MEDIA_URL}),
+            {"document_root":settings.MEDIA_ROOT}),
     )

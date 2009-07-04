@@ -1,7 +1,14 @@
 from django import forms
 
 class AddFragmentForm(forms.Form):
-    fragment_text = forms.fields.CharField(label="Three words to add to the story")
+    fragment_text = forms.fields.CharField(
+        label="Three words to add to the story",
+        widget=forms.TextInput(
+            attrs={
+                'class': 'ui-corner-all ui-widget-content',
+            }
+        )
+    )
     def clean_fragment_text(self):
     
         # Taken from models.Story.add_fragment:
