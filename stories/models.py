@@ -22,10 +22,10 @@ class Story(models.Model):
     @property
     def brieftext(self):
         frag_list = self.fragment_set.all()
-        if len(frag_list) > 5:
+        if len(frag_list) > 3:
             return "%s..." % " ".join([fragment.text for fragment in frag_list])
         elif frag_list:
-            return " ".join([fragment.text for fragment in frag_list[:4]])
+            return " ".join([fragment.text for fragment in frag_list[:2]])
         else:
             return ""
         

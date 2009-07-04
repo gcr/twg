@@ -4,25 +4,18 @@
 
 {% block content-title %}Story List{% endblock %}
 {%block stories_content %}
-
-    {% if story_list %}
     
-    <div id="story_list">
-        <table>
-        {% for story in story_list %}
-            <tr>
-            {# TODO: Change this to ui-state-active for new stories #}
-            <td class="ui-state-default ui-corner-left">
+    <div class="story_list">
+        {% if story_list %}
+            {% for story in story_list %}
+                {# TODO: Change this to ui-state-active for new stories #}
                 <h2><a href="{% url story_detail slug=story.slug %}">{{story.name}}</a></h2>
-            </td>
-            <td class="brieftext ui-widget-content ui-corner-right">
-                {{ story.brieftext }}
-            </td>
-            </tr>
-        {% endfor %}
-        </table>
+                    {{ story.brieftext }}
+            {% endfor %}
+        {% else %}
+            No stories yet!
+        {% endif%}
     </div>
-    {% endif %}
     <br />
     {% if user.is_authenticated %}
         <div class="ui-widget-content ui-corner-all" style="width:500px;">
