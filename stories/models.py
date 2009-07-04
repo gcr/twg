@@ -5,7 +5,7 @@ import datetime
 class Story(models.Model):
     name = models.CharField(max_length = 50)
     last_update_date = models.DateTimeField()
-    
+    slug = models.SlugField(max_length = 50)
     
     def __unicode__(self):
         return self.name

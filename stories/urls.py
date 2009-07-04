@@ -20,8 +20,9 @@ urlpatterns = patterns('django.views.generic',
     ),
     
     # Individual story
-    url(r'^(?P<object_id>\d+)/$', 'list_detail.object_detail',
+    url(r'^(?P<slug>[\w-]+)/$', 'list_detail.object_detail',
         {
+            'slug_field':'slug',
             'queryset': Story.objects.all(),
             'template_object_name': 'story',
             'extra_context': {'form':forms.AddFragmentForm},
@@ -34,7 +35,7 @@ urlpatterns = patterns('django.views.generic',
 # Custom views ---------------
 urlpatterns += patterns('',
     # Add a fragment to a story
-    url(r'^(?P<story_id>\d+)/add/?$', views.add_fragment, name='story_add_fragment'),
+    url(r'^(?P<slug>[\w-]+)/add/?$', views.add_fragment, name='story_add_fragment'),
     
     # Add a story
     url(r'^new/?$', views.create_new_story, name='story_create_new'),

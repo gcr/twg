@@ -13,7 +13,7 @@
             <tr>
             {# TODO: Change this to ui-state-active for new stories #}
             <td class="ui-state-default ui-corner-left">
-                <h2><a href="{% url story_detail object_id=story.id %}">{{story.name}}</a></h2>
+                <h2><a href="{% url story_detail slug=story.slug %}">{{story.name}}</a></h2>
             </td>
             <td class="brieftext ui-widget-content ui-corner-right">
                 {{ story.brieftext }}

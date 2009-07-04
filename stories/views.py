@@ -7,15 +7,16 @@ from django.contrib.auth.decorators import login_required
 import datetime
 import forms
 from models import Story
+from utils import slugify
 
 @login_required
-def add_fragment(request, story_id):
+def add_fragment(request, slug):
     if request.method == "POST":
         frag_form = forms.AddFragmentForm(request.POST)
         if frag_form.is_valid():
-            story = get_object_or_404(Story, pk=story_id)
+            story = get_object_or_404(Story, slug=slug)
             story.add_fragment(frag_form.cleaned_data['fragment_text'], request.user)
-            return HttpResponseRedirect(reverse('story_detail', kwargs={'object_id':story_id}))
+            return HttpResponseRedirect(reverse('story_detail', kwargs={'slug':slug}))
     else:
         # Return a form page
         frag_form = forms.AddFragmentForm()
@@ -23,7 +24,7 @@ def add_fragment(request, story_id):
     return render_to_response("stories/add_story_fragment.html",
         RequestContext(request, {
             'form':frag_form,
-            'story':get_object_or_404(Story, pk=story_id),
+            'story':get_object_or_404(Story, slug=slug),
         })
     )
     
@@ -39,9 +40,11 @@ def create_new_story(request):
                 name = story_form.cleaned_data['story_name'],
                 last_update_date = datetime.datetime.now()
             )
+            # Give 'er a slug!
+            story.slug = slugify(story.name, instance=story)
             story.save()
             story.add_fragment(frag_form.cleaned_data['fragment_text'], request.user)
-            return HttpResponseRedirect(reverse('story_detail', kwargs={'object_id':story.id}))
+            return HttpResponseRedirect(reverse('story_detail', kwargs={'slug':story.slug}))
     else:
         # Return a blank form page
         story_form = forms.NewStoryForm()
