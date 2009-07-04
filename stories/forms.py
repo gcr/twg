@@ -23,3 +23,13 @@ class AddFragmentForm(forms.Form):
             raise forms.ValidationError("We can only have three words here!")
             
         return " ".join(word_list)
+        
+class NewStoryForm(forms.Form):
+    story_name = forms.fields.CharField(
+        label="Name",
+        widget=forms.TextInput(
+            attrs={
+                'class': 'ui-corner-all ui-widget-content',
+            }
+        )
+    )

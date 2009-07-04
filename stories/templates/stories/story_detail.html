@@ -20,7 +20,7 @@
     {% if user.is_authenticated %}
     <form method="post" action="{% url story_add_fragment story_id=story.id %}">
         {{ form.as_p }}
-        <input type="submit" value="Add">
+        <input type="submit" class="ui-corner-all ui-state-default" value="Add">
     </form>
     {% endif %}
 

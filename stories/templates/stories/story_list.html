@@ -12,5 +12,13 @@
             {% endfor %}
         </ol>
     {% endif %}
+    {% if user.is_authenticated %}
+        Create a new story
+        <form method="post" action="{% url story_create_new %}">
+            {{ story_form.as_p }}
+            {{ frag_form.as_p }}
+            <input type="submit" class="ui-corner-all ui-state-default" value="Add">
+        </form>
+    {% endif %}
 
 {% endblock %}
