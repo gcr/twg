@@ -102,16 +102,27 @@ body {
 /*    border: solid #babdb6 1px;*/
     position: absolute;
     left: 0;
+    width: 70%;
+
+    margin-right: 256px;
 }
 .content-frame-minimized-right {
 /*    border: solid #babdb6 1px;*/
     position: absolute;
     right: 0;
-    float: right;
+    width: 25%;
 }
 .content-frame-minimized-right h1 {
 /*    border: solid #babdb6 1px;*/
-    padding-right: 1em;
+    padding-right: 0.5em;
+}
+
+.content-frame-alternate-color {
+/*    border: solid #babdb6 1px;*/
+    background-color: #204a87;
+}
+.content-frame-alternate-color h1 {
+    background-color: #204a87;
 }
     
 input.openid {
