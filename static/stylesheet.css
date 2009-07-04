@@ -5,7 +5,8 @@ html, body {
 }
 body {
     font-family: Arial;
-    background-color: #2e3436
+    background-color: #2e3436;
+    font-size: 16pt;
 }
 
 .header {
@@ -14,14 +15,14 @@ body {
     margin-left: auto;
     margin-right: auto;
     background: #f57900;
-    padding: 12px;
+    padding: 4px;
 }
 .header a{
     text-decoration: none;
     color: #fff;
 }
 .header img {
-    vertical-align: text-bottom;
+    vertical-align: middle;
     border: none;
 }
 .header h1 {
@@ -30,7 +31,7 @@ body {
     color: #fff;
     font-family: helvetica;
     padding-left: 48px;
-    font-size: 48pt;
+    font-size: 36pt;
 }
 
 .top-bar {
@@ -70,7 +71,7 @@ body {
     padding: 0 12px 12px 12px;
 }
 .content-frame a,.content-frame a:visited,.content-frame a:link,.content-frame a:active {
-    color: #fff;
+    color: #f57900;
 }
 .content-frame h1 {
     display: inline-block;
@@ -86,9 +87,12 @@ body {
     padding-right: 3em;
     width: auto;
 }
+.content-frame h2 {
+    margin: 0.5em;
+}
 
 input.openid {
-    background: url("/openid/logo.gif") no-repeat; 
+    background: #fff url("/openid/logo.gif") no-repeat; 
     background-position: 0 50%;
     padding-left: 16px;
 }

@@ -2,7 +2,7 @@
 {% if user.is_authenticated %}
     <ul>
         <li>Hello, {{ user.username }}!</li>
-        <li class="separator"><img src="{{MEDIA_URL}}top-bullet-separator.png"></li>
+        <li class="separator">|</li>
         <li><a href="{% url account_logout %}">Logout</a></li>
     </ul>
 {% else %}
@@ -17,11 +17,11 @@
                 <input type="submit" class="ui-corner-all ui-state-default" value="login" />
 <!--                <input type="hidden" name="next" value="{{ request.path }}" /> -->
             </li>
-            <li class="separator"><img src="{{MEDIA_URL}}top-bullet-separator.png"></li>
+            <li class="separator">|</li>
             <li>
                 <a href="{% url register_new_account %}">Register</a>
             </li>
-            <li class="separator"><img src="{{MEDIA_URL}}top-bullet-separator.png"></li>
+            <li class="separator">|</li>
             <li>
                 <a href="{% url account_login %}">OpenID?</a>
             </li>
