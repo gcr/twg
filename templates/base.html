@@ -23,7 +23,10 @@
         <img src="{{MEDIA_URL}}twg_logo.png"> three-word story
     </div>
     {% block top-bar %}{% endblock %}
-    {% block content %}{% endblock %}
+    <div class="content-frame">
+        <h1>{% block content-title %}Test Title{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </div>
 </body>
 </html>
 
