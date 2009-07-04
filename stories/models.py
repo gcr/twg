@@ -55,7 +55,7 @@ class Story(models.Model):
         
         
     class Meta:
-        ordering = ("last_update_date", "name")
+        ordering = ("-last_update_date", "name")
         verbose_name_plural = "Stories"
 
     

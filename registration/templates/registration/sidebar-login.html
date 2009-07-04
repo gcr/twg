@@ -1,9 +1,9 @@
 {# Login info for sidebar #}
 {% if user.is_authenticated %}
-    Hello, {{ user.username}}!
+    <div class="ui-corner-top ui-widget-header">Hello, {{ user.username }}!</div><br>
     <a href="{% url account_logout %}">Logout</a>
 {% else %}
-    Log in
+    <div class="ui-corner-top ui-widget-header">Log in</div>
     <form action="{% url account_login %}" method="post">
         <table>
             <tr>

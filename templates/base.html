@@ -17,10 +17,10 @@
 </head>
 
 <body>
-    <div class="header">
-        {% block header %}Hello, world!{% endblock %}
+    <div class="ui-state-default header">
+        <img class="header" src="{{MEDIA_URL}}twg_logo.png"> three-word story
     </div>
-    <div class="content" >
+    <div class="content ui-widget-content" >
         {% block content %}{% endblock %}
     </div>
 </body>
