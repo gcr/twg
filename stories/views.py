@@ -1,7 +1,7 @@
 # Create your views here.
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 import datetime
@@ -13,7 +13,7 @@ def add_fragment(request, story_id):
     if request.method == "POST":
         frag_form = forms.AddFragmentForm(request.POST)
         if frag_form.is_valid():
-            story = Story.objects.get(pk=story_id)
+            story = get_object_or_404(Story, pk=story_id)
             story.add_fragment(frag_form.cleaned_data['fragment_text'], request.user)
             return HttpResponseRedirect(reverse('story_detail', kwargs={'object_id':story_id}))
     else:
@@ -23,7 +23,7 @@ def add_fragment(request, story_id):
     return render_to_response("stories/add_story_fragment.html",
         RequestContext(request, {
             'form':frag_form,
-            'story':Story.objects.get(pk=story_id),
+            'story':get_object_or_404(Story, pk=story_id),
         })
     )
     
