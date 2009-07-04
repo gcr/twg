@@ -2,7 +2,7 @@
 
 {% block title %}“{{ story.name }}”{% endblock %}
 {% block content-title %}{{story.name}}{%endblock%}
-{%block stories_content %}
+{%block content %}
     <ol>
         {% for fragment in story.fragment_set.all %}
             {# TODO: Re-use the story detail code instead of hardcoding the URL. #}

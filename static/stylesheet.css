@@ -67,7 +67,9 @@ body {
     margin-right: auto;
     margin-top: 2em;
     padding: 0;
+    position: relative;
 }
+
 .content-frame {
 /*    border: solid #babdb6 1px;*/
     color: #fff;
@@ -95,6 +97,22 @@ body {
 .content-frame h2 {
     margin: 0.5em;
 }
+
+.content-frame-minimized-left {
+/*    border: solid #babdb6 1px;*/
+    position: absolute;
+    left: 0;
+}
+.content-frame-minimized-right {
+/*    border: solid #babdb6 1px;*/
+    position: absolute;
+    right: 0;
+    float: right;
+}
+.content-frame-minimized-right h1 {
+/*    border: solid #babdb6 1px;*/
+    padding-right: 1em;
+}
     
 input.openid {
     background: #fff url("/openid/logo.gif") no-repeat; 
@@ -103,7 +121,7 @@ input.openid {
 }
 
 .story-list {
-    width: 70%;
+/*    width: 70%;*/
 }
 .story-list h2 {
     display: inline-block;
@@ -126,15 +144,4 @@ input.openid {
     border: solid 1px #4e9a06;
     color: #000;
     padding: 1em;
-}
-
-.author-list {
-    display: inline;
-    float: right;
-    width: 30%;
-}
-.author-list h2 {
-    border-bottom: solid 1px #888a85;
-    padding-right: 1em;
-    margin-left: 0;
 }

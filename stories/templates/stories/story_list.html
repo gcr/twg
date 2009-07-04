@@ -3,24 +3,7 @@
 {% block title %}Story list{% endblock %}
 
 {% block content-title %}Story List{% endblock %}
-{%block stories_content %}
-    <div class="author-list">
-        <h2>Authors</h2>
-        <ul>
-        <li>Bob</li>
-        
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        <li>Bob</li>
-        </ul>
-    </div>
-    
+{% block content %}    
     <div class="story-list">
         {% if story_list %}
             {% for story in story_list %}
@@ -50,4 +33,22 @@
         </div>
     {% endif %}
 
+{% endblock %}
+
+{# Right page #}
+{% block content-right-title %}Authors{% endblock %}
+{% block content-right %}
+<ul>
+<li>Bob</li>
+
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+<li>Bob</li>
+</ul>
 {% endblock %}

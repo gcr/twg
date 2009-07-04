@@ -2,7 +2,17 @@
 
 {% block title %}Stories{% endblock %}
 
-{% block content %}
-{% block stories_content %}{%endblock%}
-{% endblock %}
+{# Override the default template #}
 
+{% block content-wrapper %}
+    <div class="content-frame content-frame-minimized-left">
+        <h1>{% block content-title %}Test Title{% endblock %}</h1>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="content-frame content-frame-minimized-right">
+        <h1>{% block content-right-title %}Authors{% endblock %}</h1>
+        {% block content-right %}
+        {% endblock %}
+    </div>
+{% endblock %}
