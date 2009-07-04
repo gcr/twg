@@ -13,7 +13,8 @@
                 <div class="story-header">
                     <h2><a href="{% url story_detail slug=story.slug %}">{{story.name}}</a></h2>
                     <strong>Last updated:</strong>
-                    {{ story.last_update_date|naturalday:"M d, Y" }}
+                    {{ story.last_update_date|naturalday:"F d, Y" }}
+                    ({{ story.last_update_date|date:"g:i A"}})
                 </div>
                 <div class="story">
                     {{ story.brieftext }}
