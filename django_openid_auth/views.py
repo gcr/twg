@@ -165,7 +165,7 @@ def login_begin(request, template_name='openid/login.html',
     return render_openid_request(request, openid_request, return_to)
 
 
-def login_complete(request, redirect_field_name=REDIRECT_FIELD_NAME):
+def login_complete(request, redirect_field_name=REDIRECT_FIELD_NAME, **kwargs):
     redirect_to = request.REQUEST.get(redirect_field_name, '')
 
     openid_response = parse_openid_response(request)
