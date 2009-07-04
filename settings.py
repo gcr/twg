@@ -1,4 +1,5 @@
 # Django settings for three word game.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -79,11 +80,13 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'twg.urls'
 
+CURRENT_DIR = os.path.dirname(__file__)
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/home/michael/Projects/twg/templates/",
+    os.path.join(CURRENT_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
