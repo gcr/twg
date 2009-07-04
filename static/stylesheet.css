@@ -4,6 +4,10 @@ html, body {
     height: 100%;
 }
 
+body {
+    font-family: Arial;
+}
+
 .header {
     display: block;
     top: 0;
@@ -19,6 +23,17 @@ html, body {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+    padding: 8px 0 8px 0;
+}
+
+.top-bar ul {
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar li {
+    display: inline;
+    padding-left: 12px;
 }
 
 .content-frame {
@@ -36,7 +51,7 @@ html, body {
     border: solid black 1px;
     background-color: #fff;
     margin-top: -0.5em;
-    margin-left: 2em;
+    margin-left: 1em;
     padding: 0.25em;
     width: auto;
 }
