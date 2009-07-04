@@ -156,14 +156,13 @@ input.openid {
     text-decoration: none;
 }
 .story-list .story {
-    display: block;
     background-image: url("/static/quote-left.png");
     background-repeat: no-repeat;
     background-position: 8px 0;
+    text-indent: 2.5em;
     margin-left: 1em;
     margin-bottom: 1.5em;
     padding: 0.25em;
-    text-indent: 2.5em;
     text-align: left;
     color: #fff;
 }
