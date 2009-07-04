@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-        <div class="sidebar-right ui-corner-all ui-widget-content">
-            {% block sidebar-right %}{%endblock%}
-        </div>
+        {% block top-bar %}
+            <div class="top-bar">
+                {% include "registration/sidebar-login.html" %}
+            </div>
+        {%endblock%}
         {% block main %}{% endblock %}
 {% endblock %}
