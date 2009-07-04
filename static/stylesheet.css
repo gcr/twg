@@ -1,0 +1,22 @@
+input.openid {
+    background: url("/openid/logo.gif") no-repeat; 
+    background-position: 0 50%;
+    padding-left: 16px;
+}
+
+div.content {
+    top: 10em;
+    left: 0;
+    border: solid black 1px;
+    padding: 12px;
+}
+
+div.sidebar-right {
+    position: relative;
+    right: 0px;
+    float: right;
+    width: auto;
+    padding: 12px;
+    border: solid black 1px;
+}
+

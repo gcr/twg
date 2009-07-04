@@ -12,29 +12,47 @@
         </p>
         
     {% else %}
-        Hey, sailor! Log in here:
         {% if form.errors %}
-            <p class="error">Sorry, that's not a valid username or password</p>
+            <div class="ui-state-error ui-corner-all" style="width: 50%; padding: 12px;">
+                <span class="ui-icon ui-icon-alert" style="float: left; margin-right: 0.3em;">
+                </span> 
+                Sorry, that's not a valid username or password.
+            </div>
         {% endif %}
-
-        <form action="{% url account_login %}" method="post">
-          <label for="username">User name:</label>
-          <input type="text" name="username" value="" id="username">
-          <label for="password">Password:</label>
-          <input type="password" name="password" value="" id="password">
-  
-          <input type="submit" value="{% trans "Sign in" %}" />
-          <input type="hidden" name="next" value="{{ next|escape }}" />
-        </form>
-        <h1>Or: Sign in with your OpenID</h1>
+        <fieldset>
+            <legend>Hey, sailor! Log in here:</legend>
+            <table>
+                <form action="{% url account_login %}" method="post">
+                    <tr>
+                        <td>
+                            <label for="username">User name:</label>
+                        </td><td>
+                            <input type="text" name="username" value="" class="ui-corner-all ui-widget-content" id="username">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <label for="password">Password:</label>
+                        </td><td>
+                            <input type="password" name="password" value="" class="ui-corner-all ui-widget-content" id="password">
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <input type="submit" class="ui-corner-all ui-state-default" value="{% trans "Sign in" %}" />
+                            <input type="hidden" name="next" value="{{ next|escape }}" />
+                        </td>
+                    </tr>
+                </form>
+            </table>
+        </fieldset>
+        Or:
         <form name="fopenid" action="{% url openid_login %}" method="post">
 	        <fieldset>
 		        <legend>{% trans "Sign In Using Your OpenID" %}</legend>
                 <div class="form-row">
                     <label for="id_openid_identifier">{% trans "OpenID:" %}</label><br />
-                    <input id="id_openid_identifier" type="text" class="openid" name="openid_identifier" maxlength="255" />
+                    <input id="id_openid_identifier" type="text" class="openid ui-widget-content ui-corner-all" name="openid_identifier" maxlength="255" />
                 </div>
-                <div class="submit-row "><input name="bsignin" type="submit" value="{% trans "Sign in" %}"></div>
+                <div class="submit-row "><input name="bsignin" type="submit" class="ui-corner-all ui-state-default" value="{% trans "Sign in" %}"></div>
 
          {% if next %}
 	        <input type="hidden" name="next" value="{{ next|escape }}" />

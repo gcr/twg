@@ -19,7 +19,7 @@ def add_fragment(request, story_id):
         # Return a form page
         frag_form = AddFragmentForm()
         
-    return render_to_response("stories/add_story.html",
+    return render_to_response("stories/add_story_fragment.html",
         RequestContext(request, {
             'form':frag_form,
 #            'user':request.user,
