@@ -1,28 +1,26 @@
 {% extends "base_stories.html" %}
 
 {% block title %}Story list{% endblock %}
-{% comment %}
-{% block javascript %}
-$(function() {
-		$("#story_list").accordion();
-});
 
-{% endblock %}
-{% endcomment %}
 {%block stories_content %}
 
     {% if story_list %}
     
-    <h1>Story list:</h1>
-        <div id="story_list" class="ui-accordion ui-widget ui-helper-reset">
+    <h1 class="ui-widget-header">Story list:</h1>
+        <div id="story_list">
+            <table>
             {% for story in story_list %}
-                {# TODO: Re-use the story detail code instead of hardcoding the URL. #}
-                <h3><a class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-top" href="{% url story_detail object_id=story.id %}">{{story.name}}</a> {{ story.brieftext }}</h3>
-                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" >
+                <tr>
+                <td class="ui-state-default ui-corner-left">
+                    <h2><a href="{% url story_detail object_id=story.id %}">{{story.name}}</a></h2>
+                </td>
+                <td class="brieftext ui-widget-content ui-corner-right">
                     {{ story.brieftext }}
-                </div>
+                </td>
+                </tr>
             {% endfor %}
-        </ul>
+            </table>
+        </div>
     {% endif %}
     {% if user.is_authenticated %}
         <div class="ui-widget-content ui-corner-all" style="width:500px;">

@@ -53,24 +53,18 @@ div.ui-widget-header {
     padding: 4px;
 }
 
-#story_list {
+/*#story_list {
     list-style-position: inside;
+}*/
+
+#story_list .brieftext {
+    font-size: 14pt;
+    padding-left: 1em;
 }
 
-#story_list h3 {
-    margin: 0px;
+#story_list a {
+    display: block;
+    width: 100%;
 }
 
-#story_list .ui-accordion-header {
-    padding: 4px;
-}
 
-#story_list .ui-accordion-content {
-    margin-bottom: 1em;
-}
-
-#story_list li {
-    padding: 4px;
-    margin: 0.25em;
-    width: 60%;
-}
