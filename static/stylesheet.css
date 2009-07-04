@@ -144,7 +144,7 @@ input.openid {
 /*    border-left: solid 3px #f57900;*/
     color: #888a85;
     padding-left: 1em;
-    text-align: center;
+    text-align: right;
 }
 .story-list .story-entry h2 {
     margin: 0;
