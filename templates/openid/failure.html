@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
+{% block content-title %}OpenID failed!{%endblock%}
 {% block content %}
-    <h1>OpenID failed</h1>
-
     <p>{{ message|escape }}</p>
     <a href="{% url account_login %}">Try again?</a>
 {% endblock %}

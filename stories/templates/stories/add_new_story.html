@@ -1,10 +1,9 @@
 {% extends "base_stories.html" %}
 
-{% block title %}Adding to “{{ story.name }}”{% endblock %}
-{%block stories_content %}
+{% block title %}New story{% endblock %}
+{% block content-title %}New story{% endblock %}
 
-    Creating a new story
-    
+{%block stories_content %}
     <form method="post" action="">
         <table>
             {{ story_form.as_table }}
