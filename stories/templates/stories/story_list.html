@@ -1,16 +1,26 @@
 {% extends "base_stories.html" %}
 
 {% block title %}Story list{% endblock %}
+{% comment %}
+{% block javascript %}
+$(function() {
+		$("#story_list").accordion();
+});
 
+{% endblock %}
+{% endcomment %}
 {%block stories_content %}
 
     {% if story_list %}
     
     <h1>Story list:</h1>
-        <ul class="story_list">
+        <div id="story_list" class="ui-accordion ui-widget ui-helper-reset">
             {% for story in story_list %}
                 {# TODO: Re-use the story detail code instead of hardcoding the URL. #}
-                <li class="ui-state-hover ui-corner-all"><a href="{% url story_detail object_id=story.id %}">{{story.name}}</a></li>
+                <h3><a class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-top" href="{% url story_detail object_id=story.id %}">{{story.name}}</a> {{ story.brieftext }}</h3>
+                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active" >
+                    {{ story.brieftext }}
+                </div>
             {% endfor %}
         </ul>
     {% endif %}
