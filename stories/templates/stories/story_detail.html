@@ -3,7 +3,7 @@
 {% block title %}“{{ story.name }}”{% endblock %}
 {%block stories_content %}
 
-    Individual story {{ story.name }}
+    <h1 class="ui-widget-header">{{ story.name }}</h1>
     <ol>
         {% for fragment in story.fragment_set.all %}
             {# TODO: Re-use the story detail code instead of hardcoding the URL. #}

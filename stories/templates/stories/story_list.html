@@ -11,6 +11,7 @@
             <table>
             {% for story in story_list %}
                 <tr>
+                {# TODO: Change this to ui-state-active for new stories #}
                 <td class="ui-state-default ui-corner-left">
                     <h2><a href="{% url story_detail object_id=story.id %}">{{story.name}}</a></h2>
                 </td>
@@ -22,6 +23,7 @@
             </table>
         </div>
     {% endif %}
+    <br />
     {% if user.is_authenticated %}
         <div class="ui-widget-content ui-corner-all" style="width:500px;">
             <div class="ui-corner-top ui-widget-header">Create a new story</div>
