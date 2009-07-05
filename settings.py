@@ -99,6 +99,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'twg.stories',
     'twg.registration',
+    'twg.profiles',
 )
 
 # OpenID support

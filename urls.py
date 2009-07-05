@@ -18,7 +18,10 @@ urlpatterns += patterns('',
     (r'^stories/', include('twg.stories.urls')),
     
     (r'^admin/(.*)', admin.site.root),
+    
     (r'^registration/', include('twg.registration.urls')),
+    
+    (r'^profiles/', include('twg.profiles.urls')),
     
     (r'^openid/', include('django_openid_auth.urls'), {'template_name': 'registration/login.html'}),
 )
