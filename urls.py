@@ -28,9 +28,9 @@ urlpatterns += patterns('',
 
 # User account management ---------------
 urlpatterns += patterns('django.contrib.auth',
-    url(r'^accounts/login/?', 'views.login', name='account_login'),
+    url(r'^accounts/login/?$', 'views.login', name='account_login'),
     #url(r'^logout/', views.logout, {'next_page': '/'}, 'accounts_logout'),
-    url(r'^accounts/logout/?', 'views.logout_then_login', name='account_logout'),
+    url(r'^accounts/logout/?$', 'views.logout_then_login', name='account_logout'),
 )
 
 if settings.DEBUG:
