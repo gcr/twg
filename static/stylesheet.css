@@ -67,8 +67,8 @@ td {
     margin: 0;
 }
 .top-wrapper h1 {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     top: 1em;
     z-index: 5;
     color: #fff;
@@ -78,10 +78,11 @@ td {
     padding-right: 1.5em;
     width: auto;
 }
-.top-wrapper h1 .right-header {
+.top-wrapper .right-header {
 /*    border: solid #babdb6 1px;*/
-    padding-right: 0.5em;
-    margin-left: 0;
+    float: right;
+    padding-right: 0.25em;
+    padding-left: 1.5em;
 }
 .top-bar {
     background: #ce5c00;
@@ -107,14 +108,14 @@ td {
 }
 
 .content-wrapper {
+    position: relative;
     display: block;
     width: 100%;
-    min-height: 400px;
+    min-height: 300px;
     margin-left: auto;
     margin-right: auto;
 /*    margin-top: 2em;*/
     padding: 0;
-    position: relative;
 }
 
 .content-frame {
@@ -122,6 +123,7 @@ td {
     color: #fff;
     background-color: #555753;
     padding: 2em 12px 12px 12px;
+    min-height: 300px;
 }
 .content-frame a,.content-frame a:link,.content-frame a:active {
     color: #f57900;
@@ -137,13 +139,13 @@ td {
 /*    border: solid #babdb6 1px;*/
     position: absolute;
     left: 0;
-    width: 65%;
+    width: 60%;
 }
 .content-frame-minimized-right {
 /*    border: solid #babdb6 1px;*/
     position: absolute;
     right: 0;
-    width: 25%;
+    width: 40%;
 }
 
 .content-frame-alternate-color {

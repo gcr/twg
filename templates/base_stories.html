@@ -5,8 +5,8 @@
 {# Override the default template #}
 
 {% block title-wrapper %}
-    <h1>{% block content-title %}Test Title{% endblock %}</h1>
     <h1 class="right-header">{% block content-right-title %}Authors{% endblock %}</h1>
+    <h1>{% block content-title %}Test Title{% endblock %}</h1>
 {% endblock %}
 
 {% block content-wrapper %}
