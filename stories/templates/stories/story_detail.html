@@ -27,6 +27,8 @@
             </table>
         </form>
     </div>
+    {% else %}
+        Y'know, if you <a href="{% url account_login %}">log in</a>, you can add to this story. <a href="{% url register_new_account %}">Create a New User </a>if you don't already have an account.
     {% endif %}
 
 {% endblock %}

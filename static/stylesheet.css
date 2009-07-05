@@ -48,6 +48,9 @@ input {
     border-top-width: 8px;
     padding: 0.25em;
 }
+.error a:active, .error a:link, .error a:visited, .error a {
+    color: #000;
+}
 
 th {
     vertical-align: top;
