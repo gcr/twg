@@ -4,6 +4,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.views.generic import list_detail
 import datetime
 import forms
 from models import Story
@@ -56,3 +58,20 @@ def create_new_story(request):
             'frag_form':frag_form,
         })
     )
+    
+    
+def view_story_detail(request, slug):
+    # Small generic view wrapper.
+    story = get_object_or_404(Story, slug=slug)
+    authors = User.objects.filter(fragment__story=story).distinct()
+    return list_detail.object_detail(request,
+            slug=slug,
+            slug_field='slug',
+            queryset= Story.objects.all(),
+            template_object_name='story',
+            extra_context={
+                'form':forms.AddFragmentForm,
+                'authors':authors,
+            },
+    )
+

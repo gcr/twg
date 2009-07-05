@@ -30,3 +30,13 @@
     {% endif %}
 
 {% endblock %}
+
+{% block content-right %}
+<div class="authorlist">...that contributed to this story:
+    <ul>
+        {% for author in authors %}
+            <li><a href="{% url profile_view username=author.username %}">{{ author.username }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

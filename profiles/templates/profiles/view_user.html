@@ -23,7 +23,7 @@
             </tr>
         </table>
         <br />
-        <h2>Stories I've contributed to</h2>
+        <h2>Stories {{ profile_user}}'s contributed to</h2>
         <ul>
         {% for story in stories %}
             <li><a href="{% url story_detail slug=story.slug %}">{{ story.name }}</a></li>

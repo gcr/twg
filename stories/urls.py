@@ -22,16 +22,15 @@ urlpatterns = patterns('django.views.generic',
         }
     ),
     
-    # Individual story
-    url(r'^(?P<slug>[\w-]+)/$', 'list_detail.object_detail',
-        {
-            'slug_field':'slug',
-            'queryset': Story.objects.all(),
-            'template_object_name': 'story',
-            'extra_context': {'form':forms.AddFragmentForm},
-        },
-        'story_detail' # URL name
-    ),
+#    url(r'^(?P<slug>[\w-]+)/$', 'list_detail.object_detail',
+#        {
+#            'slug_field':'slug',
+#            'queryset': Story.objects.all(),
+#            'template_object_name': 'story',
+#            'extra_context': {'form':forms.AddFragmentForm},
+#        },
+#        'story_detail' # URL name
+#    ),
     
 )
 
@@ -42,5 +41,10 @@ urlpatterns += patterns('',
     
     # Add a story
     url(r'^new/?$', views.create_new_story, name='story_create_new'),
+    
+    # Individual story
+    url(r'^(?P<slug>[\w-]+)/$', views.view_story_detail,
+        name='story_detail' # URL name
+    ),
 )
 
