@@ -5,6 +5,6 @@
 
 {% block content-title %}OpenID failed!{%endblock%}
 {% block content %}
-    <p>{{ message|escape }}</p>
+    <p class="error">{{ message|escape }}</p>
     <a href="{% url account_login %}">Try again?</a>
 {% endblock %}

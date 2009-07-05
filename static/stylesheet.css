@@ -40,6 +40,11 @@ input {
     font-size: 36pt;
 }
 
+.error {
+    display: block;
+    
+}
+
 .top-bar {
     background: #ce5c00;
     color: #fff;

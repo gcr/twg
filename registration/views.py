@@ -18,10 +18,6 @@ def create_account(request):
     else:
         # New form
         form = UserCreationForm()
-    
-    # Add the classes to the form
-    for field in ['username', 'password1', 'password2']:
-        form.fields[field].widget.attrs['class'] = 'ui-corner-all ui-widget-content'
         
     return render_to_response("registration/register.html", RequestContext(request, {
         'form': form,

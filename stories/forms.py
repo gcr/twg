@@ -3,11 +3,7 @@ from django import forms
 class AddFragmentForm(forms.Form):
     fragment_text = forms.fields.CharField(
         label="Three words",
-        widget=forms.TextInput(
-            attrs={
-                'class': 'ui-corner-all ui-widget-content',
-            }
-        )
+        widget=forms.TextInput()
     )
     def clean_fragment_text(self):
     
@@ -27,9 +23,5 @@ class AddFragmentForm(forms.Form):
 class NewStoryForm(forms.Form):
     story_name = forms.fields.CharField(
         label="Story name",
-        widget=forms.TextInput(
-            attrs={
-                'class': 'ui-corner-all ui-widget-content',
-            }
-        )
+        widget=forms.TextInput()
     )
