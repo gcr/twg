@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -13,8 +14,13 @@ def create_account(request):
         # Form submitted
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            new_user = form.save()
-            return HttpResponseRedirect(reverse("edit_profile"))
+            form.save()
+            new_user = authenticate(
+                username=form.cleaned_data['username'],
+                password=form.cleaned_data['password1'],
+            )
+            login(request, new_user)
+            return HttpResponseRedirect(reverse("profile_edit"))
             
     else:
         # New form

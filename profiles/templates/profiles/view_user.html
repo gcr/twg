@@ -7,6 +7,27 @@
 {% block content %}
 <div class="userprofile">
     <div class="big-list">
+        {% if edit_form %}
+            <div class="floating-profile-edit">
+                <h2>Edit</h2>
+                Would you like to <a href="{% url profile_change_password %}">change your password?</a>
+                <br /><br />
+                <div class="form">
+                    <h2>Edit profile</h2>
+                    <form action="{% url profile_edit %}" method="post">
+                        <table>
+                            {{ edit_form.as_table }}
+                            <tr>
+                                <td colspan=2>
+                                    <input style="width: 256px;" type="submit" value="Change">
+                                </td>
+                            </tr>
+                        </table>
+                            
+                    </form>
+                </div>
+            </div>
+        {% endif %}
         <h2>Personal Information</h2>
         <table>
             <tr>

@@ -207,5 +207,10 @@ input.openid {
 }
 .form h2 {
     margin: 0 0 0.2em 0;
+    color: #000;
     border-bottom: solid 1px #000;
+}
+
+.floating-profile-edit {
+    float: right;
 }

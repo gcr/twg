@@ -2,12 +2,11 @@
 
 {% block title %}Edit profile{% endblock %}
 
-{# Turn off the top login bar #}
-{% block top-bar %}{% endblock %}
-
 {% block content-title %}{{ user.username }}{% endblock%}
 {% block content %}
 <div>
+    Would you like to <a href="{% url profile_change_password %}">change your password?</a>
+    <br /><br />
     <div class="form">
         <h2>Edit profile</h2>
         <form action="" method="post">
