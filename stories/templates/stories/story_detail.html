@@ -8,7 +8,7 @@
     <ol>
         <div class="story">
             {% for fragment in story.fragment_set.all %}
-                <span title="Author: {{fragment.author.username}}  Date:{{fragment.date|naturalday:"F d, Y"}}">{{ fragment.text }}</span>
+                <span class="story-fragment" title="Author: {{fragment.author.username}}  Date: {{fragment.date|naturalday:"F d, Y"}} ({{ story.last_update_date|date:"g:i A"}})">{{ fragment.text }}</span>
             {% endfor %}
         </div>
     </ol>

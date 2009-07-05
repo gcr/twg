@@ -192,6 +192,13 @@ input.openid {
     color: #fff;
 }
 
+.story-fragment:hover {
+    background-color: #888a85;
+/*    border-left: solid 3px #f57900;*/
+/*    border-right: solid 3px #f57900;*/
+/*    border-bottom: solid 3px #f57900;*/
+}
+
 .form {
     width: 500px;
     background-color: #f57900;
