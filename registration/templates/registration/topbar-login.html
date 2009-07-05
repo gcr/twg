@@ -3,6 +3,8 @@
     <ul>
         <li>Hello, {{ user.username }}!</li>
         <li class="separator">|</li>
+        <li><a href="{% url profile_view username=user.username %}">Edit profile</a></li>
+        <li class="separator">|</li>
         <li><a href="{% url account_logout %}">Logout</a></li>
     </ul>
 {% else %}

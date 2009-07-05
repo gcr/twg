@@ -4,6 +4,6 @@ import views
 # Generic views ---------------
 urlpatterns = patterns('',
     url(r'^(?P<username>[\w-]+)/?', views.view_profile,
-    name='user_profile'),
+    name='profile_view'),
 )
 

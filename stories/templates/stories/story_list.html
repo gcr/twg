@@ -61,7 +61,7 @@
 {% block content-right %}
 <ul>
 {% for author in authors %}
-    <li>{{ author.username }}</li>
+    <li><a href="{% url profile_view username=author.username %}">{{ author.username }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}
