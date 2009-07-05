@@ -17,7 +17,13 @@ class AddFragmentForm(forms.Form):
         
         if len(word_list) > 3:
             raise forms.ValidationError("We can only have three words here!")
-            
+        
+        # Remove elipses
+        if word_list[0].startswith("..."):
+            word_list[0] = word_list[0][3:]
+        if word_list[-1].endswith("..."):
+            word_list[-1] = word_list[-1][:-3]
+                
         return " ".join(word_list)
         
 class NewStoryForm(forms.Form):
