@@ -14,7 +14,7 @@ def create_account(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save()
-            return HttpResponseRedirect(reverse("edit_profile", kwargs={'username':new_user.useranme}))
+            return HttpResponseRedirect(reverse("edit_profile"))
             
     else:
         # New form

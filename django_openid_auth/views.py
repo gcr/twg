@@ -178,6 +178,9 @@ def login_complete(request, redirect_field_name=REDIRECT_FIELD_NAME, **kwargs):
         if user is not None:
             if user.is_active:
                 auth_login(request, user)
+                # OpenID username hack
+                if "openiduser" in user.username:
+                    return HttpResponseRedirect(reverse('profile_edit'))
                 return HttpResponseRedirect(sanitise_redirect_url(redirect_to))
             else:
                 return render_failure(request, 'Disabled account')
