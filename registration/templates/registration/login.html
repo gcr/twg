@@ -50,15 +50,23 @@
         <div class="form">
             <h2>{% trans "Sign In Using Your OpenID" %}</h2>
             <form name="fopenid" action="{% url openid_login %}" method="post">
-                <div class="form-row">
-                    <label for="id_openid_identifier">{% trans "OpenID:" %}</label><br />
-                    <input id="id_openid_identifier" type="text" class="openid" name="openid_identifier" maxlength="255" />
-                </div>
-                <div class="submit-row "><input name="bsignin" type="submit" value="{% trans "Sign in" %}"></div>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="id_openid_identifier">{% trans "OpenID:" %}</label><br />
+                        <td><td>
+                            <input id="id_openid_identifier" type="text" class="openid" name="openid_identifier" maxlength="255" />
+                        </td>
+                    </tr><tr>
+                        <td>
+                            <input name="bsignin" type="submit" value="{% trans "Sign in" %}">
+                            {% if next %}
+                                <input type="hidden" name="next" value="{{ next|escape }}" />
+                            {% endif %}
+                        </td>
+                    </tr>
+                </table>
 
-                {% if next %}
-                    <input type="hidden" name="next" value="{{ next|escape }}" />
-                {% endif %}
             </form>	
         </div>
     {% endif %}

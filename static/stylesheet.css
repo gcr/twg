@@ -40,9 +40,20 @@ input {
     font-size: 36pt;
 }
 
-.error {
+.error, .errorlist {
+    list-style: none;
     display: block;
-    
+    background-color: #ef2929;
+    border: solid 2px #cc0000;
+    border-top-width: 8px;
+    padding: 0.25em;
+}
+
+th {
+    vertical-align: top;
+}
+td {
+    padding: 4px;
 }
 
 .top-bar {
