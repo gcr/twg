@@ -7,8 +7,11 @@
 
 {% block content-title %}Create a new account{% endblock%}
 {% block content %}
-    <div class="new_account">
-        Would you rather <a href="{% url account_login %}">sign in with OpenID</a> instead?
+<div>
+Would you rather <a href="{% url account_login %}">sign in with OpenID</a> instead?
+<br /><br />
+    <div class="form">
+        <h2>Account information</h2>
         <form action="" method="post">
             <table>
                 {{ form.as_table }}
@@ -21,5 +24,6 @@
                 
         </form>
     </div>
+</div>
 {% endblock %}
 

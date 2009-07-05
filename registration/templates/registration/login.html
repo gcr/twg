@@ -17,14 +17,12 @@
         
     {% else %}
         {% if form.errors %}
-            <div class="ui-state-error ui-corner-all" style="width: 50%; padding: 12px;">
-                <span class="ui-icon ui-icon-alert" style="float: left; margin-right: 0.3em;">
-                </span> 
+            <div class="error" style="width: 50%; padding: 12px;">
                 Sorry, that's not a valid username or password.
             </div>
         {% endif %}
-        <fieldset>
-            <legend>Hey, sailor! Log in here:</legend>
+        <div class="form">
+            <h2>Hey, sailor! Log in here:</h2>
             <table>
                 <form action="{% url account_login %}" method="post">
                     <tr>
@@ -47,23 +45,22 @@
                     </tr>
                 </form>
             </table>
-        </fieldset>
-        Or:
-        <form name="fopenid" action="{% url openid_login %}" method="post">
-	        <fieldset>
-		        <legend>{% trans "Sign In Using Your OpenID" %}</legend>
+        </div>
+        <h2>— Or —</h2>
+        <div class="form">
+            <h2>{% trans "Sign In Using Your OpenID" %}</h2>
+            <form name="fopenid" action="{% url openid_login %}" method="post">
                 <div class="form-row">
                     <label for="id_openid_identifier">{% trans "OpenID:" %}</label><br />
                     <input id="id_openid_identifier" type="text" class="openid ui-widget-content ui-corner-all" name="openid_identifier" maxlength="255" />
                 </div>
                 <div class="submit-row "><input name="bsignin" type="submit" class="ui-corner-all ui-state-default" value="{% trans "Sign in" %}"></div>
 
-         {% if next %}
-	        <input type="hidden" name="next" value="{{ next|escape }}" />
-         {% endif %}
-
-	        </fieldset>
-        </form>	
+                {% if next %}
+                    <input type="hidden" name="next" value="{{ next|escape }}" />
+                {% endif %}
+            </form>	
+        </div>
     {% endif %}
 
 {% endblock %}
