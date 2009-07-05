@@ -1,0 +1,34 @@
+{% extends "base_profiles.html" %}
+
+{% block title %}{{ profile_user.username }}{% endblock %}
+
+{% block content-title %}{{ profile_user.username }}{% endblock %}
+
+{% block content %}
+<div class="userprofile">
+    <div class="big-list">
+        <h2>Personal Information</h2>
+        <table>
+            <tr>
+                <th>First name:</th>
+                <td>{{ profile_user.first_name }}</td>
+            </tr>
+            <tr>
+                <th>Last name:</th>
+                <td>{{ profile_user.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Email address:</th>
+                <td><a href="mailto:{{ profile_user.email }}">{{ profile_user.email }}</a></td>
+            </tr>
+        </table>
+        <br />
+        <h2>Stories I've contributed to</h2>
+        <ul>
+        {% for story in stories %}
+            <li><a href="{% url story_detail slug=story.slug %}">{{ story.name }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

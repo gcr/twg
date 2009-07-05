@@ -98,8 +98,11 @@ td {
     background-color: #555753;
     padding: 0 12px 12px 12px;
 }
-.content-frame a,.content-frame a:visited,.content-frame a:link,.content-frame a:active {
+.content-frame a,.content-frame a:link,.content-frame a:active {
     color: #f57900;
+}
+.content-frame a:visited {
+    color: #ce5c00;
 }
 .content-frame h1 {
     display: inline-block;
@@ -153,23 +156,29 @@ input.openid {
     padding-left: 16px;
 }
 
-.story-list {
+.big-list {
 /*    width: 70%;*/
 }
-.story-list .story-entry {
+.big-list .story-entry {
 /*    border-left: solid 3px #f57900;*/
     color: #888a85;
     padding-left: 1em;
     text-align: right;
 }
-.story-list .story-entry h2 {
+.story-entry a {
+    text-decoration: none;
+}
+.big-list h2 {
+    color: #f57900;
     margin: 0;
     padding-bottom: 2px;
     border-bottom: solid 2px #f57900;
 }
-.story-list a:visited,.story-list a:active,.story-list a:hover,.story-list a:link {
+.big-list a:active,.big-list a:hover,.big-list a:link {
     color: #f57900;
-    text-decoration: none;
+}
+.big-list a:visited{
+    color: #ce5c00;
 }
 .story {
     background-image: url("/static/quote-left.png");
