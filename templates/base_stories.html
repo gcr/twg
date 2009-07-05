@@ -10,6 +10,23 @@
 {% endblock %}
 
 {% block content-wrapper %}
+    <table><tr>
+    <td width="75%" valign="top">
+    <div class="content-frame">
+        {% block content %}
+        {% endblock %}
+    </div>
+    </td><td valign="top">
+    <div class="content-frame">
+        {% block content-right %}
+        {% endblock %}
+    </div>
+    </td>
+    </tr></table>
+{% endblock %}
+
+{% comment %}
+{% block content-wrapper %}
     <div class="content-frame content-frame-minimized-left">
         {% block content %}
         {% endblock %}
@@ -19,3 +36,4 @@
         {% endblock %}
     </div>
 {% endblock %}
+{% endcomment %}

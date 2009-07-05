@@ -62,27 +62,33 @@ td {
 
 .top-wrapper {
     position: relative;
+    vertical-align: bottom;
     padding-left: 50px;
     padding-right: 50px;
     margin: 0;
 }
 .top-wrapper h1 {
     position: relative;
-    display: inline-block;
-    top: 1em;
+/*    display: inline-block;*/
+/*    top: 1.5em;*/
     z-index: 5;
     color: #fff;
     background-color: #555753;
     margin: 0;
+    top: 1em;
     padding: 0.25em;
     padding-right: 1.5em;
-    width: auto;
+    max-width: 50%;
+    margin-top: -0.5em;
 }
 .top-wrapper .right-header {
 /*    border: solid #babdb6 1px;*/
-    float: right;
+    position: absolute;
+    right: 50px;
+    top: auto;
+    bottom: -1em;
     padding-right: 0.25em;
-    padding-left: 1.5em;
+/*    padding-left: 1.5em;*/
 }
 .top-bar {
     background: #ce5c00;
