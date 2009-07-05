@@ -1,6 +1,8 @@
 html, body {
     margin-top: 0px;
     padding-top: 0px;
+    padding-left: 50px;
+    padding-right: 50px;
     height: 100%;
 }
 body {
@@ -16,12 +18,11 @@ input {
 }
 
 .header {
+    position: relative;
     top: 0;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    background: #f57900;
+    width: 100%;
     padding: 4px;
+    background: #f57900;
 }
 .header a{
     text-decoration: none;
@@ -59,13 +60,34 @@ td {
     padding: 4px;
 }
 
+.top-wrapper {
+    position: relative;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0;
+}
+.top-wrapper h1 {
+    display: inline-block;
+    position: relative;
+    top: 1em;
+    z-index: 5;
+    color: #fff;
+    background-color: #555753;
+    margin: 0;
+    padding: 0.25em;
+    padding-right: 1.5em;
+    width: auto;
+}
+.top-wrapper h1 .right-header {
+/*    border: solid #babdb6 1px;*/
+    padding-right: 0.5em;
+    margin-left: 0;
+}
 .top-bar {
     background: #ce5c00;
     color: #fff;
     display: block;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     padding: 8px 0 8px 0;
     text-align: center;
 }
@@ -86,11 +108,11 @@ td {
 
 .content-wrapper {
     display: block;
-    width: 80%;
+    width: 100%;
     min-height: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2em;
+/*    margin-top: 2em;*/
     padding: 0;
     position: relative;
 }
@@ -99,28 +121,13 @@ td {
 /*    border: solid #babdb6 1px;*/
     color: #fff;
     background-color: #555753;
-    padding: 0 12px 12px 12px;
+    padding: 2em 12px 12px 12px;
 }
 .content-frame a,.content-frame a:link,.content-frame a:active {
     color: #f57900;
 }
 .content-frame a:visited {
     color: #ce5c00;
-}
-.content-frame h1 {
-    display: inline-block;
-    /*border-left: solid #888a85 1px;
-    border-bottom: solid #888a85 1px;*/
-/*    -moz-border-radius: 8px;*/
-    font-weight: bold;
-    background-color: #555753;
-/*    background-color: #2e3436;*/
-    margin-top: -0.5em;
-    margin-left: 1em;
-    margin-bottom: 0em;
-    padding: 0.25em;
-    padding-right: 1.5em;
-    width: auto;
 }
 .content-frame h2 {
     margin: 0.5em;
@@ -137,11 +144,6 @@ td {
     position: absolute;
     right: 0;
     width: 25%;
-}
-.content-frame-minimized-right h1 {
-/*    border: solid #babdb6 1px;*/
-    padding-right: 0.5em;
-    margin-left: 0;
 }
 
 .content-frame-alternate-color {

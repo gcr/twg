@@ -21,18 +21,22 @@
 <body>
     <div class="header">
         <a href="/">
-            <img src="{{MEDIA_URL}}twg_logo.png" valign="center";><h1>three-word story</h1>
+            <img src="{{MEDIA_URL}}twg_logo.png" valign="center" /><h1>three-word story</h1>
         </a>
     </div>
-    {% block top-bar %}
-        <div class="top-bar">
-            {% include "registration/topbar-login.html" %}
+        <div class="top-wrapper">
+            {% block top-bar %}
+                <div class="top-bar">
+                    {% include "registration/topbar-login.html" %}
+                </div>
+            {% endblock %}
+            {% block title-wrapper %}
+                <h1>{% block content-title %}Test Title{% endblock %}</h1>
+            {% endblock %}
         </div>
-    {% endblock %}
         <div class="content-wrapper">
             {% block content-wrapper %}
                 <div class="content-frame">
-                    <h1>{% block content-title %}Test Title{% endblock %}</h1>
                     {% block content %}{% endblock %}
                 </div>
             {% endblock %}
