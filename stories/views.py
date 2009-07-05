@@ -63,7 +63,10 @@ def create_new_story(request):
 def view_story_detail(request, slug):
     # Small generic view wrapper.
     story = get_object_or_404(Story, slug=slug)
-    authors = User.objects.filter(fragment__story=story).distinct()
+    # Return all the authors that contributed to this story.
+    # (An author's contributed to this story if they've authored a fragment that
+    # references this story)
+    authors = User.objects.filter(fragment__story=story).distinct().order_by('username')
     return list_detail.object_detail(request,
             slug=slug,
             slug_field='slug',
