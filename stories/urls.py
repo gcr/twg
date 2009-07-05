@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 from models import Story
+from django.contrib.auth.models import User
 import views
 import forms
 import settings
@@ -12,9 +13,11 @@ urlpatterns = patterns('django.views.generic',
             'queryset': Story.objects.all(),
             'template_object_name': 'story',
             # Allow people to create a new story inline
+            'paginate_by':25,
             'extra_context': {
                 'story_form': forms.NewStoryForm,
                 'frag_form': forms.AddFragmentForm,
+                'authors': User.objects.all,
             },
         }
     ),

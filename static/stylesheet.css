@@ -97,7 +97,7 @@ input {
     margin-left: 1em;
     margin-bottom: 0em;
     padding: 0.25em;
-    padding-right: 3em;
+    padding-right: 1.5em;
     width: auto;
 }
 .content-frame h2 {
@@ -165,4 +165,15 @@ input.openid {
     padding: 0.25em;
     text-align: left;
     color: #fff;
+}
+
+.form {
+    width: 500px;
+    background-color: #f57900;
+    padding: 0.25em;
+    color: #000;
+}
+.form h2 {
+    margin: 0 0 0.2em 0;
+    border-bottom: solid 1px #000;
 }

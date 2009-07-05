@@ -2,7 +2,7 @@ from django import forms
 
 class AddFragmentForm(forms.Form):
     fragment_text = forms.fields.CharField(
-        label="Three words to add to the story",
+        label="Three words",
         widget=forms.TextInput(
             attrs={
                 'class': 'ui-corner-all ui-widget-content',
@@ -26,7 +26,7 @@ class AddFragmentForm(forms.Form):
         
 class NewStoryForm(forms.Form):
     story_name = forms.fields.CharField(
-        label="Name",
+        label="Story name",
         widget=forms.TextInput(
             attrs={
                 'class': 'ui-corner-all ui-widget-content',
